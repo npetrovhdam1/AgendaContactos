@@ -52,8 +52,5 @@ public class Contacto {
 	public Character getPrimeraLetra() {
 		return 'c';
 	} 
-
-
-	}
-
+	
 }
