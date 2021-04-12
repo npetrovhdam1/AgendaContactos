@@ -64,8 +64,21 @@ public class AgendaContactos {
 	}
 
 	public List<Personal> felicitar() {
+		List<Personal> personalesAFelicitar = new ArrayList<Personal>();
+		for (Map.Entry<Character, Set<Contacto>> entradaAgenda : agenda.entrySet()) {
+			for (Contacto contacto : entradaAgenda.getValue()) {
+				if (contacto.getClass() == Personal.class) {
+					if (((Personal) contacto).esCumpleaños()) {
+						personalesAFelicitar.add((Personal) contacto);
+					}
+				}
+			}
 
-		return null;
+		}
+		return personalesAFelicitar;
+	}
+
+
 	}
 
 	public void personalesPorRelacion() {
