@@ -1,4 +1,9 @@
 
 public enum Relacion {
-//subir relacion
+	PADRE,
+	MADRE, 
+	AMIGOS, 
+	PAREJA, 
+	HIJO, 
+	HIJA
 }
