@@ -116,8 +116,14 @@ public class AgendaContactos {
 	}
 
 	public List<Personal> personalesOrdenadosPorFechaNacimiento(char letra) {
+		List<Personal> personalesEncontrados = personalesEnLetra(letra);
+		 Collections.sort(personalesEncontrados, (Personal p1, Personal p2)-> p1.getFechaNacimiento().compareTo(p2.getFechaNacimiento()));
+		 return personalesEncontrados;
 
-		return null;
+	}
+
+}
+
 
 	}
 
