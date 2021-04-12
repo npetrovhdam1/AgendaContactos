@@ -22,3 +22,4 @@ public class Personal extends Contacto {
 	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
+}
