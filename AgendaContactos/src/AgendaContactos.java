@@ -43,8 +43,24 @@ public class AgendaContactos {
 	}
 
 	public List<Personal> personalesEnLetra(char letra) {
+		List<Personal> personalesEncontrados = new ArrayList<Personal>();
+		for (Map.Entry<Character, Set<Contacto>> entradaAgenda : agenda.entrySet()) {
+			if (entradaAgenda.getKey() == letra) {
+				for (Contacto contacto : entradaAgenda.getValue()) {
+					if (contacto.getClass() == Personal.class) {
+						if (contacto.getPrimeraLetra() == letra) {
+							personalesEncontrados.add((Personal) contacto);
+						}
+					}
+				}
+			}
 
-		return null;
+		}
+
+		return personalesEncontrados;
+	}
+
+
 	}
 
 	public List<Personal> felicitar() {
