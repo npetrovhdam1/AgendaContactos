@@ -82,6 +82,36 @@ public class AgendaContactos {
 	}
 
 	public void personalesPorRelacion() {
+		// Creamos nuevo mapa para albergar resultados
+				Map<Relacion, Set<String>> personalesRelacionados = new HashMap<Relacion, Set<String>>();
+				// recorremos los valores del enumerado relacion
+				for (Relacion relacion : Relacion.values()) {
+					// creamos nueva entrada para el mapa de resultados
+					Entry<Relacion, Set<String>> entrada = Map.entry(relacion, new HashSet<String>());
+					// recorremos las entradas de la agenda
+					for (Map.Entry<Character, Set<Contacto>> entradaAgenda : agenda.entrySet()) {
+						// recorremos los contactos de la entrada
+						for (Contacto contacto : entradaAgenda.getValue()) {
+							// preguntamos si el contacto es de tipo personal
+							if (contacto.getClass() == Personal.class) {
+								// convertimos el contact en contacot personal
+								Personal contactoPersonal = (Personal) contacto;
+								// preguntamos si la relacion del contacto personal es la relacion actual
+								if (contactoPersonal.getRelacion() == relacion) {
+									// obtenemos nombre y apellidos el contacto
+									String nombreApellidos = contactoPersonal.getNombre() + " , "
+											+ contactoPersonal.getApellidos();
+									// añadimos los nombre y apellidos a la coleccion de la entrada nueva
+									entrada.getValue().add(nombreApellidos);
+								}
+							}
+						}
+
+					}
+				}
+
+				return personalesRelacionados;
+			}
 
 	}
 
