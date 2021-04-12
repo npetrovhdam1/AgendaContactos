@@ -28,6 +28,8 @@ public class TestAgenda {
 		personalesPorRelacion(agenda);
 		separador();
 
+
+
 	}
 
 	private static void buscarContactos(AgendaContactos agenda, String texto) {
