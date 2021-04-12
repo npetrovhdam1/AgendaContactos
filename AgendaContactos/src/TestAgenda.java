@@ -40,7 +40,6 @@ public class TestAgenda {
 		} else {
 			resultado.forEach(contacto -> System.out.println(contacto));
 		}
-
 	}
 
 	private static void felicitar(AgendaContactos agenda) {
