@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 /**
  * Utilidades para cargar la agenda
@@ -5,11 +8,48 @@
 public class AgendaIO {
 
 	public static void importar(AgendaContactos agenda) {
+		Scanner input = new Scanner(agenda.getClass().getResourceAsStream("/agenda.csv"));
+		while (input.hasNextLine()) {
+			String linea = input.nextLine();
+			Contacto contacto = parsearLinea(linea);
+			agenda.añadirContacto(contacto);
+		}
+		input.close();
 
+		
 	}
 
 	private static Contacto parsearLinea(String linea) {
 		return null;
+		String[] partes = linea.split(",");
+		int tipoContacto = Integer.parseInt(partes[0].trim());
+		String nombre = partes[1].trim();
+		String apellidos = partes[2].trim();
+		String telefono = partes[3].trim();
+		String email = partes[4].trim();
+		String empresa;
+		LocalDate fechaNacimiento;
+		Relacion relacion;
+		switch (tipoContacto) {
+		case 1:
+			empresa = partes[5].trim();
+			return new Profesional(nombre, apellidos, telefono, email, empresa);
+
+		case 2:
+			fechaNacimiento =LocalDate.parse(partes[5].trim(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+			relacion = Relacion.valueOf(partes[6].trim());
+			return new Personal(nombre, apellidos, telefono, email, fechaNacimiento, relacion );
+
+		}
+		return null;
+	}
+
+	/**
+	 * 
+	 * @return un array de String con todas las líneas de información de todos los
+	 *         contactos. 1 significa contacto profesional, 2 significa contacto
+	 *         personal
+	 */
 
 	}
 
