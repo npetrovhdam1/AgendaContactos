@@ -99,7 +99,7 @@ public class AgendaContactos {
 	 * Las claves se recuperan en el orden natural del enumerado.
 	 */
 	public Map<Relacion, Set<String>> personalesPorRelacion() {
-		// Creamos nuevo mapa para albergar resultados
+		// Creamos nuevo mapa para albergar los resultados
 		Map<Relacion, Set<String>> personalesRelacionados = new HashMap<Relacion, Set<String>>();
 		// recorremos los valores del enumerado relacion
 		for (Relacion relacion : Relacion.values()) {
