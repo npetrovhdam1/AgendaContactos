@@ -1,3 +1,4 @@
+//@Autor: Eenko Seminario y Nikolay Petrov
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -99,7 +100,7 @@ public class AgendaContactos {
 	 * Las claves se recuperan en el orden natural del enumerado.
 	 */
 	public Map<Relacion, Set<String>> personalesPorRelacion() {
-		// Creamos nuevo mapa para albergar los resultados
+		// Creamos nuevo mapa para albergar resultados
 		Map<Relacion, Set<String>> personalesRelacionados = new HashMap<Relacion, Set<String>>();
 		// recorremos los valores del enumerado relacion
 		for (Relacion relacion : Relacion.values()) {

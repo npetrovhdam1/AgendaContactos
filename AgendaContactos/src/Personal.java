@@ -1,3 +1,4 @@
+//@Autor: Eenko Seminario y Nikolay Petrov
 import java.time.LocalDate;
 
 public class Personal extends Contacto {

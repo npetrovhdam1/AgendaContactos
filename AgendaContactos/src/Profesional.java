@@ -1,3 +1,4 @@
+//@Autor: Eenko Seminario y Nikolay Petrov
 import java.util.Random;
 
 public class Profesional extends Contacto {

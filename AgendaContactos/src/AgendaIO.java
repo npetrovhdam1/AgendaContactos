@@ -1,3 +1,4 @@
+//@Autor: Eenko Seminario y Nikolay Petrov
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;

@@ -1,3 +1,4 @@
+//@Autor: Eenko Seminario y Nikolay Petrov
 public class Contacto {
 	private String nombre;
 	private String apellidos;
