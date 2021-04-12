@@ -49,5 +49,11 @@ public class Contacto {
 		return email.hashCode();
 
 	}
+	public Character getPrimeraLetra() {
+		return 'c';
+	} 
+
+
+	}
 
 }
